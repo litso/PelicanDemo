@@ -7,17 +7,28 @@
 //
 
 import Foundation
+import Pelican
 
-protocol Event {
+protocol Event: PelicanGroupable, PelicanBatchableTask {
     var name: String { get }
     var timeStamp: Date { get }
     var dictionary: [String: Any] { get }
 }
 
+// MARK: - PelicanGroupable
+extension Event {
+    var group: String { return "App Events" }
+
+    static func processGroup(tasks: [PelicanBatchableTask], didComplete: @escaping ((PelicanProcessResult) -> Void)) {
+        print("Batch:")
+        tasks.forEach { print($0) }
+        didComplete(.done)
+    }
+}
+
 final class AppEvents {
     class func logEvent(_ event: Event) {
-        let dictionary = event.dictionary
-        print("Logged Event: ", dictionary)
+        Pelican.shared.gulp(task: event)
     }
 }
 
@@ -36,6 +47,17 @@ struct LoginEvent: Event {
 
     init(email: String) {
         self.timeStamp = Date()
+        self.email = email
+    }
+
+    static let taskType: String = String(describing: LoginEvent.self)
+
+    init?(dictionary: [String : Any]) {
+        guard let timeStamp = dictionary["time_stamp"] as? Date,
+            let email = dictionary["email"] as? String else {
+                return nil
+        }
+        self.timeStamp = timeStamp
         self.email = email
     }
 }
@@ -57,6 +79,17 @@ struct PupViewed: Event {
         self.timeStamp = Date()
         self.pupId = pupId
     }
+
+    static let taskType: String = String(describing: PupViewed.self)
+
+    init?(dictionary: [String : Any]) {
+        guard let timeStamp = dictionary["time_stamp"] as? Date,
+            let pupId = dictionary["pup_id"] as? Int else {
+                return nil
+        }
+        self.timeStamp = timeStamp
+        self.pupId = pupId
+    }
 }
 
 struct PupAdopted: Event {
@@ -74,6 +107,17 @@ struct PupAdopted: Event {
 
     init(pupId: Int) {
         self.timeStamp = Date()
+        self.pupId = pupId
+    }
+
+    static let taskType: String = String(describing: PupAdopted.self)
+
+    init?(dictionary: [String : Any]) {
+        guard let timeStamp = dictionary["time_stamp"] as? Date,
+            let pupId = dictionary["pup_id"] as? Int else {
+                return nil
+        }
+        self.timeStamp = timeStamp
         self.pupId = pupId
     }
 }
