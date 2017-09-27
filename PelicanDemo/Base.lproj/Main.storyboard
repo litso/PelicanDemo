@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ofN-2m-ICg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8R7-e1-tR3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,20 +7,21 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Adopt a Pup-->
         <scene sceneID="qMj-Tg-irP">
             <objects>
-                <tableViewController id="cTA-Dq-859" customClass="AdoptController" customModule="PelicanDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="cTA-Dq-859" customClass="PupListController" customModule="PelicanDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="120" sectionHeaderHeight="18" sectionFooterHeight="18" id="oUx-6e-I8J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Photo Cell" rowHeight="120" id="9ZH-yu-65K" customClass="PhotoCell" customModule="PelicanDemo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9ZH-yu-65K" id="sX4-ek-iic">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
@@ -50,7 +51,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Adopt a Pup" id="1ck-b8-JTW"/>
                     <connections>
-                        <segue destination="mJP-8y-rrZ" kind="show" identifier="Adopt" id="e00-8t-1xU"/>
+                        <segue destination="mJP-8y-rrZ" kind="show" identifier="Pup Details" id="e00-8t-1xU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gC4-6G-bJb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -60,7 +61,7 @@
         <!--Pup Name-->
         <scene sceneID="r1D-7u-jG5">
             <objects>
-                <viewController title="Pup Name" id="mJP-8y-rrZ" sceneMemberID="viewController">
+                <viewController title="Pup Name" id="mJP-8y-rrZ" customClass="PupDetailsController" customModule="PelicanDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gan-Ec-7iB"/>
                         <viewControllerLayoutGuide type="bottom" id="8MA-Re-H6G"/>
@@ -69,23 +70,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ch-9F-0Ry">
-                                <rect key="frame" x="16" y="72" width="343" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0ch-9F-0Ry">
+                                <rect key="frame" x="16" y="72" width="343" height="400"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCQ-7l-FZP">
-                                <rect key="frame" x="134" y="233" width="106" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCQ-7l-FZP">
+                                <rect key="frame" x="134" y="505" width="106" height="30"/>
                                 <state key="normal" title="Adopt this Pup!"/>
+                                <connections>
+                                    <action selector="adoptPressed:" destination="mJP-8y-rrZ" eventType="touchUpInside" id="LUd-yX-JBX"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0ch-9F-0Ry" firstAttribute="top" secondItem="Gan-Ec-7iB" secondAttribute="bottom" constant="8" id="XuB-c4-ifF"/>
                             <constraint firstItem="mCQ-7l-FZP" firstAttribute="top" secondItem="0ch-9F-0Ry" secondAttribute="bottom" constant="33" id="frk-Mz-ayn"/>
                             <constraint firstItem="mCQ-7l-FZP" firstAttribute="centerX" secondItem="XK2-xj-B9c" secondAttribute="centerX" id="o5L-Z8-fES"/>
                             <constraint firstItem="0ch-9F-0Ry" firstAttribute="leading" secondItem="XK2-xj-B9c" secondAttribute="leadingMargin" id="q5W-Rc-8lF"/>
+                            <constraint firstItem="0ch-9F-0Ry" firstAttribute="height" secondItem="XK2-xj-B9c" secondAttribute="height" multiplier="0.6" id="vDP-hD-qgE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0ch-9F-0Ry" secondAttribute="trailing" id="wPs-3N-lZd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="0ch-9F-0Ry" id="l4T-8c-gVH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sm7-dj-xBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

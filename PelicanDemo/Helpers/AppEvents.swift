@@ -9,6 +9,7 @@
 import Foundation
 
 protocol Event {
+    var name: String { get }
     var timeStamp: Date { get }
     var dictionary: [String: Any] { get }
 }
@@ -21,14 +22,59 @@ final class AppEvents {
 }
 
 struct LoginEvent: Event {
-    let timeStamp = Date()
+    let name = "login"
+    let timeStamp: Date
     let email: String
 
     var dictionary: [String : Any] {
         return [
+            "name": name,
             "time_stamp": timeStamp.iso8601StringWithMilliseconds,
             "email": email
         ]
+    }
+
+    init(email: String) {
+        self.timeStamp = Date()
+        self.email = email
+    }
+}
+
+struct PupViewed: Event {
+    let name = "pup-viewed"
+    let timeStamp: Date
+    let pupId: Int
+
+    var dictionary: [String : Any] {
+        return [
+            "name": name,
+            "time_stamp": timeStamp.iso8601StringWithMilliseconds,
+            "pup_id": pupId
+        ]
+    }
+
+    init(pupId: Int) {
+        self.timeStamp = Date()
+        self.pupId = pupId
+    }
+}
+
+struct PupAdopted: Event {
+    let name = "pup-adopted"
+    let timeStamp: Date
+    let pupId: Int
+
+    var dictionary: [String : Any] {
+        return [
+            "name": name,
+            "time_stamp": timeStamp.iso8601StringWithMilliseconds,
+            "pup_id": pupId
+        ]
+    }
+
+    init(pupId: Int) {
+        self.timeStamp = Date()
+        self.pupId = pupId
     }
 }
 

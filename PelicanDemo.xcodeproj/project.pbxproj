@@ -15,11 +15,11 @@
 		AF2781991F7B13D000EA7EE9 /* PelicanDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2781981F7B13D000EA7EE9 /* PelicanDemoTests.swift */; };
 		AF2781A41F7B13D000EA7EE9 /* PelicanDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2781A31F7B13D000EA7EE9 /* PelicanDemoUITests.swift */; };
 		AF2781B51F7B207600EA7EE9 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2781B41F7B207600EA7EE9 /* LoginController.swift */; };
-		AF2781BC1F7B304800EA7EE9 /* Pup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2781BB1F7B304800EA7EE9 /* Pup.swift */; };
 		AF2781C01F7B32CA00EA7EE9 /* AppEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2781BF1F7B32CA00EA7EE9 /* AppEvents.swift */; };
 		AF2781C31F7B335B00EA7EE9 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2781C21F7B335B00EA7EE9 /* PhotoCell.swift */; };
 		AF2781C51F7B375A00EA7EE9 /* PupDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2781C41F7B375A00EA7EE9 /* PupDetailsController.swift */; };
-		AF6B24761F7B379300DE784B /* PupListController.swift in Resources */ = {isa = PBXBuildFile; fileRef = AF6B24751F7B379300DE784B /* PupListController.swift */; };
+		AFE7F0671F7B3862000EB88B /* Pup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE7F0661F7B3862000EB88B /* Pup.swift */; };
+		AFE7F0691F7B388D000EB88B /* PupListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE7F0681F7B388D000EB88B /* PupListController.swift */; };
 		B62B6D49986A31A438497C02 /* Pods_PelicanDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1627568794D04AEB51A90D61 /* Pods_PelicanDemo.framework */; };
 		D83E2BE82F8D958A3179E5B0 /* Pods_PelicanDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6BD4A9A1032091F5E055C1B /* Pods_PelicanDemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -61,11 +61,11 @@
 		AF2781A31F7B13D000EA7EE9 /* PelicanDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PelicanDemoUITests.swift; sourceTree = "<group>"; };
 		AF2781A51F7B13D000EA7EE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF2781B41F7B207600EA7EE9 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		AF2781BB1F7B304800EA7EE9 /* Pup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pup.swift; path = Models/Pup.swift; sourceTree = "<group>"; };
 		AF2781BF1F7B32CA00EA7EE9 /* AppEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppEvents.swift; path = Helpers/AppEvents.swift; sourceTree = "<group>"; };
 		AF2781C21F7B335B00EA7EE9 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoCell.swift; path = Cells/PhotoCell.swift; sourceTree = "<group>"; };
 		AF2781C41F7B375A00EA7EE9 /* PupDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PupDetailsController.swift; sourceTree = "<group>"; };
-		AF6B24751F7B379300DE784B /* PupListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PupListController.swift; sourceTree = "<group>"; };
+		AFE7F0661F7B3862000EB88B /* Pup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pup.swift; path = Models/Pup.swift; sourceTree = "<group>"; };
+		AFE7F0681F7B388D000EB88B /* PupListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PupListController.swift; sourceTree = "<group>"; };
 		B6669B03C67B2246FF1CBB04 /* Pods-PelicanDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PelicanDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PelicanDemoTests/Pods-PelicanDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C6BD4A9A1032091F5E055C1B /* Pods_PelicanDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PelicanDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D27FD67FE64174B4519D0D1D /* Pods-PelicanDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PelicanDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PelicanDemoTests/Pods-PelicanDemoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 		AF2781B11F7B1F3500EA7EE9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AF6B24751F7B379300DE784B /* PupListController.swift */,
+				AFE7F0681F7B388D000EB88B /* PupListController.swift */,
 				AF2781B41F7B207600EA7EE9 /* LoginController.swift */,
 				AF2781C41F7B375A00EA7EE9 /* PupDetailsController.swift */,
 			);
@@ -189,7 +189,7 @@
 		AF2781BA1F7B302E00EA7EE9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AF2781BB1F7B304800EA7EE9 /* Pup.swift */,
+				AFE7F0661F7B3862000EB88B /* Pup.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -333,7 +333,6 @@
 			files = (
 				AF27818E1F7B13D000EA7EE9 /* LaunchScreen.storyboard in Resources */,
 				AF27818B1F7B13D000EA7EE9 /* Assets.xcassets in Resources */,
-				AF6B24761F7B379300DE784B /* PupListController.swift in Resources */,
 				AF2781891F7B13D000EA7EE9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,10 +510,11 @@
 			files = (
 				AF2781841F7B13D000EA7EE9 /* AppDelegate.swift in Sources */,
 				AF2781C01F7B32CA00EA7EE9 /* AppEvents.swift in Sources */,
-				AF2781BC1F7B304800EA7EE9 /* Pup.swift in Sources */,
 				AF2781B51F7B207600EA7EE9 /* LoginController.swift in Sources */,
+				AFE7F0691F7B388D000EB88B /* PupListController.swift in Sources */,
 				AF2781C51F7B375A00EA7EE9 /* PupDetailsController.swift in Sources */,
 				AF2781C31F7B335B00EA7EE9 /* PhotoCell.swift in Sources */,
+				AFE7F0671F7B3862000EB88B /* Pup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
